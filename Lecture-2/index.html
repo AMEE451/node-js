@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #todoList{
+        display: grid;
+        grid-template-columns:repeat(4,1fr);   
+        gap: 30px;
+        /* background-color: white; */
+        /* margin:20px;*/
+     }
+    div{
+        border: 1px solid rgb(8, 8, 8);
+        border-radius: 10px;
+        text-align: center;
+    }
+    div:hover{
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        border: none;
+        /* background-color: rgb(255, 254, 240); */
+    }
+</style>
+<body>
+    <div class="main">
+        <form id="todoData" class="form">
+            <input type="text" id="taskname" placeholder="taskname" /><br>
+            <input type="text" id="description" placeholder="description" /><br>
+            <input type="text" id="status" placeholder="status" /><br>
+            <input type="submit" id="submit"/>
+        </form>
+    </div>
+    
+    <div id="todoList"></div>
+</body>
+<script type="module" src="./frontend.index.js"></script>
+</html>
