@@ -1,7 +1,7 @@
 const express=require("express")
 const dbconnection = require("./config/db")
 const cors=require("cors")
-const userRouter=require("./routes/user.routes")
+const appRoutes=require("./routes/index")
 require("dotenv").config()
 const app=express()
 
@@ -10,7 +10,7 @@ app.use(cors())
 
 const PORT=process.env.PORT
 
-app.use("/api/v1/user",userRouter)
+app.use("/api/v1",appRoutes)
 
 app.listen(PORT,()=>{
     console.log("server started");

@@ -17,7 +17,16 @@ const hashPassword = async (password) => {
 }
 
 const compare = async (hash, password) => {
-    return await bcrypt.compare(hash, password)
+    return await bcrypt.compare(password, hash)
 }
 
-module.exports = { genereateToken, compare, hashPassword }
+const decodetoken=async(token)=>{
+    try {
+        const data=await jwt.verify(token,process.env.jwt_secret)
+        return data
+    } catch (error) {
+        throw new Error('Token Verification Failed')
+    }
+  }
+
+module.exports = { generateToken, compare, hashPassword,decodetoken }

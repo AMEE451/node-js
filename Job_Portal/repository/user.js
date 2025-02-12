@@ -20,13 +20,13 @@ const getUserById = async (id) => {
     return user;
 }
 
-const updateUser = async (user, id) => {
-    let user = await User.findByIdAndUpdate(id, user, { new: true });
+const updateUser = async (id,userdata) => {
+    let user = await User.findByIdAndUpdate(id, userdata, { new: true });
     return user;
 }
 
 const deleteUser = async (id) => {
-    let user = await User.findByIdAndDelete(id);
+    let user = await User.findByIdAndUpdate(id,{isActive:false},{new:true});
     return user;
 }
 
